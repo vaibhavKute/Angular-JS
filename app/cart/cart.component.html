@@ -11,4 +11,17 @@
             <td>{{ans.brandName}}</td>
         </tr>
     </table>
+
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Brand</th>
+        </tr>
+        <tr *ngFor="let ans of myData1">
+            <td>{{ans.id}}</td>
+            <td>{{ans.name}}</td>
+            <td>{{ans.username}}</td>
+        </tr>
+    </table>
 </div>

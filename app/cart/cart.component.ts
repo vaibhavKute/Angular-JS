@@ -14,6 +14,8 @@ export class CartComponent implements OnInit {
     {name:"product3" , price:2000 , brandName:"Nike"},
     {name:"product2" , price:3000 , brandName:"Killer Jeans"},
   ]
+
+  public myData1:any;
   constructor(public myvar:ValdationService) {
     // alert(1)
     console.log("======")
@@ -21,6 +23,18 @@ export class CartComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.myvar.select().subscribe(
+      (response)=>{
+        console.log("yes")
+        console.log(response)
+        this.myData1=response
+      },
+      (error)=>{
+        console.log("no")
+        console.log(error)
+      }
+    )
+    
   }
 
 }

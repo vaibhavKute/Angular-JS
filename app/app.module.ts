@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -17,6 +19,7 @@ import { CartComponent } from './cart/cart.component';
 import {RouterModule} from '@angular/router';
 import { Guard1Guard } from './guard1.guard';
 import { Guard2Guard } from './guard2.guard';
+import { from } from 'rxjs';
 
 //genrate your custom routes
 
@@ -43,7 +46,7 @@ const myRoute = [
     CartComponent
   ],
   imports: [
-    BrowserModule,RouterModule.forRoot(myRoute)
+    BrowserModule,RouterModule.forRoot(myRoute),HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

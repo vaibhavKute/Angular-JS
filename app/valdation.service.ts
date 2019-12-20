@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ValdationService {
 
-  constructor() { }
+  constructor(public httpdata:HttpClient) { 
+    console.log(this.httpdata)
+  }
 
   name(){
     return 1;
@@ -18,5 +21,9 @@ export class ValdationService {
   }
   password(){
     return 4;
+  }
+
+  select(){
+    return this.httpdata.get("https://jsonplaceholder.typicode.com/users")
   }
 }
